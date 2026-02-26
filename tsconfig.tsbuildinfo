@@ -1,0 +1,1 @@
+{"root":["./src/cli.ts","./src/types.ts","./src/db/index.ts","./src/db/queries.ts","./src/db/schema.ts","./src/parser/cost.ts","./src/parser/index.ts","./src/parser/session-parser.ts","./src/parser/subagent-parser.ts","./src/server/index.ts","./src/server/routes/sessions.ts","./src/server/routes/stats.ts","./src/server/routes/sync.ts"],"version":"5.9.3"}

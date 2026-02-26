@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dashboard/
+ui/node_modules/
+*.db
+*.db-wal
+*.db-shm
+*.tgz

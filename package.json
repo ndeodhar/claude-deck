@@ -1,0 +1,56 @@
+{
+  "name": "claude-deck",
+  "version": "0.1.0",
+  "description": "Dashboard for browsing and searching Claude Code sessions",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "claude-deck": "./dist/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "dashboard",
+    "sessions",
+    "anthropic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gypsum-org/claude-deck.git"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,ui -c blue,magenta \"tsx watch src/cli.ts --no-open\" \"cd ui && npm run dev -- --open\"",
+    "dev:server": "tsx watch src/cli.ts",
+    "dev:ui": "cd ui && npm run dev",
+    "build": "tsc && cd ui && npm run build",
+    "postbuild": "chmod +x dist/cli.js",
+    "build:server": "tsc",
+    "build:ui": "cd ui && npm run build",
+    "prepublishOnly": "npm run build",
+    "format": "prettier --write \"src/**/*.ts\" \"ui/src/**/*.{ts,tsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"ui/src/**/*.{ts,tsx,css}\""
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.2",
+    "@fastify/static": "^8.1.0",
+    "better-sqlite3": "^11.7.0",
+    "commander": "^13.1.0",
+    "fastify": "^5.2.1",
+    "open": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.10",
+    "concurrently": "^9.2.1",
+    "prettier": "^3.8.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "files": [
+    "dist/",
+    "dashboard/"
+  ]
+}
